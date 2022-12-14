@@ -11,7 +11,7 @@ $discountPrice = $product->price - ($product->price * ($product->discount / 100)
          <div class="button-link">
          <div class="btn-button add-to-cart action ">
             <form class="variants form-nut-grid" data-id="product-actions-26749924" enctype="multipart/form-data">
-               <input type="hidden" name="variantId" value="{{$product->id}}" />
+               <input type="hidden" name="variantId" value="{{$product->id}}" data-url="{{route('addToCart')}}"/>
                <a class="btn-addToCart grl btn_df add_to_cart">
                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                <span class="hidden-xs hidden-sm hidden-md">Mua ngay</span>

@@ -18,7 +18,11 @@
                      <a href="javascript:void(0)" title="Giỏ hàng">
                      <i class="fa fa-shopping-bag"></i>
                      <div class="cart-right">
-                        <span class="count_item_pr">1</span>
+                        @if (isset($cartcontent))
+                        <span class="count_item_pr">{{count($cartcontent)}}</span>
+                        @else
+                        <span class="count_item_pr">0</span>
+                        @endif
                      </div>
                      </a>
                </div>
@@ -54,7 +58,11 @@
                </div>
                <div class="index-cart">
                      <a href="javascript:void(0)"><i class="fa fa-shopping-bag"></i></a>
+                     @if (isset($cartcontent))
+                     <span class="cnt crl-bg count_item_pr">{{count($cartcontent)}}</span>
+                     @else
                      <span class="cnt crl-bg count_item_pr">0</span>
+                     @endif
                </div>
             </div>
          </div>

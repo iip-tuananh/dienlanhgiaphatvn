@@ -90,51 +90,6 @@ Danh sách {{$title}}
                            </ul>
                         </div>
                      </aside>
-                     <aside class="aside-item filter-tag-style-1 tag-filtster">
-                        <div class="aside-title">
-                           <h2 class="title-head margin-top-0"><span>Loại Tivi</span></h2>
-                        </div>
-                        <div class="aside-content filter-group">
-                           <ul>
-                              <li class="filter-item filter-item--check-box filter-item--green">
-                                 <span>
-                                 <label for="filter-smart-tv">
-                                 <input type="checkbox" id="filter-smart-tv" onchange="toggleFilter(this)" data-group="tag3" data-field="tags" data-text="Smart TV" value="(Smart TV)" data-operator="OR">
-                                 <i class="fa"></i>
-                                 Smart TV
-                                 </label>
-                                 </span>
-                              </li>
-                              <li class="filter-item filter-item--check-box filter-item--green">
-                                 <span>
-                                 <label for="filter-internet-tv">
-                                 <input type="checkbox" id="filter-internet-tv" onchange="toggleFilter(this)" data-group="tag3" data-field="tags" data-text="Internet TV" value="(Internet TV)" data-operator="OR">
-                                 <i class="fa"></i>
-                                 Internet TV
-                                 </label>
-                                 </span>
-                              </li>
-                              <li class="filter-item filter-item--check-box filter-item--green">
-                                 <span>
-                                 <label for="filter-android-tv">
-                                 <input type="checkbox" id="filter-android-tv" onchange="toggleFilter(this)" data-group="tag3" data-field="tags" data-text="Android TV" value="(Android TV)" data-operator="OR">
-                                 <i class="fa"></i>
-                                 Android TV
-                                 </label>
-                                 </span>
-                              </li>
-                              <li class="filter-item filter-item--check-box filter-item--green">
-                                 <span>
-                                 <label for="filter-tivi-led-thuong">
-                                 <input type="checkbox" id="filter-tivi-led-thuong" onchange="toggleFilter(this)" data-group="tag3" data-field="tags" data-text="Tivi Led thường" value="(Tivi Led thường)" data-operator="OR">
-                                 <i class="fa"></i>
-                                 Tivi Led thường
-                                 </label>
-                                 </span>
-                              </li>
-                           </ul>
-                        </div>
-                     </aside>
                   </div>
                </div>
             </div>	
@@ -172,7 +127,7 @@ Danh sách {{$title}}
          <div class="border-bg clearfix">
             <div class="col-md-12">
                <div class="pottion">
-                  <h1 class="title-head margin-top-0">Tivi</h1>
+                  <h1 class="title-head margin-top-0">{{$title}}</h1>
                   <div class="category-products products clearfix">
                      <div class="sort-cate clearfix">
                         <div class="sort-cate-left hidden-xs">

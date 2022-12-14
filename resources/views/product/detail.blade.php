@@ -135,7 +135,7 @@ $discountPrice = $product->price - ($product->price * ($product->discount / 100)
                            </div>
                         </div>
                         <div class="form-product">
-                           <form enctype="multipart/form-data" id="add-to-cart-form" action="" method="post" class="form-inline">
+                           <form enctype="multipart/form-data" id="add-to-cart-form" class="form-inline">
                               <div class="box-variant clearfix  hidden ">
                                  <input type="hidden" name="variantId" value="{{$product->id}}" />
                               </div>
@@ -148,8 +148,8 @@ $discountPrice = $product->price - ($product->price * ($product->discount / 100)
                                  </div>
                                  <div class="clearfix margin-bottom-20"></div>
                                  <div class="clearfix">
-                                    <input type="hidden" name="variantId" value="{{$product->id}}" />
-                                    <button type="submit" data-role='addtocart' class="btn btn-lg btn-gray btn-cart add_to_cart btn_buy">
+                                    <input type="hidden" name="variantId" value="{{$product->id}}" data-url="{{route('addToCart')}}"/>
+                                    <button class="btn btn-lg btn-gray btn-cart add_to_cart btn_buy">
                                     <span class="txt-main">MUA NGAY</span>
                                     <span class="txt-sub">Giao hàng tận nơi</span>
                                     </button>									
@@ -245,7 +245,7 @@ $discountPrice = $product->price - ($product->price * ($product->discount / 100)
                      </div>
                   </div>
                   <div class="product_info_buttons">
-                     <input type="hidden" name="variantId" value="{{$product->id}}" />
+                     <input type="hidden" name="variantId" value="{{$product->id}}" data-url="{{route('addToCart')}}"/>
                      <button class="btn btn_buyNow btn-buy-now-click add_to_cart">
                      <span class="txt-main">MUA NGAY</span>
                      <span class="txt-sub">Giao hàng tận nơi</span>

@@ -184,10 +184,10 @@ export default {
             //   name: "Banner quảng cáo",
             //   path: "/bannerads",
             // },
-            // {
-            //   name: "Quản lý đối tác",
-            //   path: "/partner",
-            // },
+            {
+              name: "Quản lý đối tác",
+              path: "/partner",
+            },
             // {
             //   name: "Thư viện ảnh",
             //   path: "/prize",

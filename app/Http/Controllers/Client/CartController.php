@@ -110,7 +110,15 @@ class CartController extends Controller
         }
         
         session()->put('cart', $cart);
-        return response()->json($cart);
+        $data['cart'] = session()->get('cart',[]);
+        $html1 = view('cart.add-to-cart', $data)->render();
+        $html2 = view('cart.total-price', $data)->render();
+        $html3 = view('cart.count-cart', $data)->render();
+        return response()->json([
+            'html1'=>$html1,
+            'html2'=>$html2,
+            'html3'=>$html3,
+        ]);
     }
     public function update(Request $request)
     {
@@ -118,7 +126,15 @@ class CartController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            return response()->json($cart);
+            $data['cart'] = session()->get('cart',[]);
+            $html1 = view('cart.add-to-cart', $data)->render();
+            $html2 = view('cart.total-price', $data)->render();
+            $html3 = view('cart.count-cart', $data)->render();
+            return response()->json([
+                'html1'=>$html1,
+                'html2'=>$html2,
+                'html3'=>$html3,
+            ]);
         }
         
     }
@@ -130,7 +146,15 @@ class CartController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            return response()->json($cart);
+            $data['cart'] = session()->get('cart',[]);
+            $html1 = view('cart.add-to-cart', $data)->render();
+            $html2 = view('cart.total-price', $data)->render();
+            $html3 = view('cart.count-cart', $data)->render();
+            return response()->json([
+                'html1'=>$html1,
+                'html2'=>$html2,
+                'html3'=>$html3,
+            ]);
         }
     }
 }

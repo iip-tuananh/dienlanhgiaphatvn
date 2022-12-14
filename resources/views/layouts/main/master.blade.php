@@ -217,12 +217,23 @@
       transform: rotate(0deg) scale(1) skew(1deg);
       }
       }
+      .zalo-btn{
+         position: fixed;
+         width: 110px;
+         z-index: 200000 !important;
+         cursor: pointer;
+         height: 120px;
+      }
    </style>
-   <a href="tel:0981162356" class="suntory-alo-phone suntory-alo-green" id="suntory-alo-phoneIcon" style="left: 0px; bottom: 0px;">
+   <a href="tel:{{$setting->phone1}}" class="suntory-alo-phone suntory-alo-green" id="suntory-alo-phoneIcon" style="left: 0px; bottom: 0px;">
       <div class="suntory-alo-ph-circle"></div>
       <div class="suntory-alo-ph-circle-fill"></div>
       <div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
    </a>
+   <a href="https://zalo.me/{{$setting->phone1}}" target="_blank" class="zalo-btn" style="right: 0px; bottom: 0px;">
+      <img src="{{url('frontend/images/zalo.png')}}" alt="chat zalo">
+   </a>
+   
    <script src="{{asset('frontend/js/rx.all.min.js')}}" type="text/javascript"></script>
    <!-- Bizweb javascript -->
    <script src="{{asset('frontend/js/option-selectors.js')}}" type="text/javascript"></script>
@@ -273,38 +284,6 @@
             </rect>
             </svg>
       </div>
-   </div>
-   <div class="addcart-popup product-popup awe-popup">
-      <div class="overlay no-background"></div>
-      <div class="content">
-            <div class="row row-noGutter">
-            <div class="col-xl-6 col-xs-12">
-               <div class="btn btn-full btn-primary a-left popup-title"><i class="fa fa-check"></i>Thêm vào giỏ hàng thành công
-               </div>
-               <a href="javascript:void(0)" class="close-window close-popup"><i class="fa fa-close"></i></a>
-               <div class="info clearfix">
-                  <div class="product-image margin-top-5">
-                        <img alt="popup" src="//bizweb.dktcdn.net/100/311/781/themes/660889/assets/logo.png?1646641479552" style="max-width:150px; height:auto"/>
-                  </div>
-                  <div class="product-info">
-                        <p class="product-name"></p>
-                        <p class="quantity color-main"><span>Số lượng: </span></p>
-                        <p class="total-money color-main"><span>Tổng tiền: </span></p>
-                  </div>
-                  <div class="actions">    
-                        <button class="btn  btn-primary  margin-top-5 btn-continue">Tiếp tục mua hàng</button>        
-                        <button class="btn btn-gray margin-top-5" onclick="window.location='/cart'">Kiểm tra giỏ hàng</button>
-                  </div>
-               </div>
-            </div>
-            </div>
-      </div>
-   </div>
-   <div class="error-popup awe-popup">
-      <div class="overlay no-background"></div>
-      <div class="popup-inner content">
-            <div class="error-message"></div>
-      </div>
    </div>	
    <div id="myModal" class="modal fade" role="dialog"></div>
    <div class="cart_sidebar" id="cart-sidebars">
@@ -313,6 +292,42 @@
             <div class="cart_btn-close" title="Tiếp tục mua sắm!"><i class="fa fa-close"></i></div>
       </div>
       <div class="cart_body">
+         @if (count($cartcontent) > 0)
+         @php
+            $totalPrice = 0;
+         @endphp
+         @foreach ($cartcontent as $cart)
+         @php
+            $discountPrice = $cart['price'] - ($cart['price'] * ($cart['discount'] / 100));
+            $totalPrice += $discountPrice * $cart['quantity'];
+         @endphp
+         <div class="clearfix cart_product">
+            <a class="cart_image" href="#" title="{{languageName($cart['name'])}}"><img src="{{$cart['image']}}" alt="{{languageName($cart['name'])}}"></a>
+            <div class="cart_info">
+               <div class="cart_name"><a href="#" title="{{languageName($cart['name'])}}">{{languageName($cart['name'])}}</a></div>
+               <div class="row-cart-left">
+                  <div class="cart_item_name">
+                     <div>
+                        <label class="cart_quantity">Số lượng</label>
+                        <div class="cart_select">
+                           <div class="input-group-btn">
+                              <input class="variantID" type="hidden" name="variantId" value="{{$cart['id']}}" data-url="{{route('updateCart')}}">
+                              <button onclick="btnMinus(this)" class="reduced items-count btn-minus btn btn-default" type="button">–</button>
+                              <input type="text" maxlength="12" min="0" class="input-text number-sidebar qtyItem{{$cart['id']}}" id="qtyItem{{$cart['id']}}" name="Lines" size="4" value="{{$cart['quantity']}}">
+                              <button onclick="btnPlus(this)" class="increase items-count btn-plus btn btn-default" type="button">+</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="text-right cart_prices">
+                     <div class="cart__price"><span class="cart__sale-price">{{number_format($discountPrice, 0, '', '.')}}₫</span></div>
+                     <a class="cart__btn-remove remove-item-cart" onclick="removeItem(this)" href="javascript:void(0)" data-id="{{$cart['id']}}" data-url="{{route('removeCart')}}">Bỏ sản phẩm</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         @endforeach
+         @endif
       </div>
       <div class="cart-footer">
             <hr>
@@ -321,11 +336,17 @@
                <div class="cart__col-6">
                   Thành tiền:
                </div>
-               <div class="text-right cart__totle"><span class="total-price"></span></div>
+               <div class="text-right cart__totle">
+                  @if (count($cartcontent)>0)
+                  <span class="total-price">{{number_format($totalPrice, 0, '', '.')}}₫</span>
+                  @else
+                  <span class="total-price"></span>
+                  @endif
+               </div>
             </div>
             </div>
             <div class="cart__btn-proceed-checkout-dt">
-            <button onclick="location.href='/checkout'" type="button" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout">Tiến Hành Đặt Hàng</button>
+            <button onclick="location.href='{{route('checkout')}}'" type="button" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout">Tiến Hành Đặt Hàng</button>
             </div>
       </div>
    </div>
@@ -347,11 +368,5 @@
    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5J7K3J"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <!-- End Google Tag Manager (noscript) -->
-   <script>
-      $('.add_to_cart').click(function(e) {
-         e.preventDefault();
-         var id = $(this).parent().find('input[name=variantId]').val();
-      })
-   </script>
 </body>
 </html>

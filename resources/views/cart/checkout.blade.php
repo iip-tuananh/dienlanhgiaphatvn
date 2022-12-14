@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	<meta name="description" content="KoKo Pet - Thanh toán đơn hàng" />
-	<title>NMIGROUP - Thanh toán đơn hàng</title>
+	<title>Điện Lạnh Gia Phát - Thanh toán đơn hàng</title>
 	<link rel="icon" href="{{url(''.$setting->favicon)}}" type="image/x-icon">
 	<link rel="stylesheet" href="{{ asset('frontend/css/checkout.min.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +14,7 @@
 	<style>
 	</style>
 	<!-- End checkout custom css -->
-	<script src="{{	asset('frontend/js/jquery.js')}}" type="text/javascript"></script>
+	<script src="{{	asset('frontend/js/jquery-2.2.3.min.js')}}" type="text/javascript"></script>
 	<script src="{{	asset('frontend/js/notify.min.js')}}" type="text/javascript"></script>
 	<script src="{{ asset('frontend/js/checkout.vendor.min.js') }}"></script>
 	<script src="{{ asset('frontend/js/checkout.min.js') }}"></script>
@@ -27,7 +27,7 @@
 			<div class="logo logo--left ">
 				<h1 class="shop__name">
 					<a href="{{ route('home') }}">
-					NMIGROUP
+					Điện Lạnh Gia Phát
 					</a>
 				</h1>
 			</div>
@@ -54,7 +54,7 @@
 						<div class="logo logo--left ">
 							<h1 class="shop__name">
 								<a href="{{ route('home') }}">
-									NMIGROUP
+									Điện Lạnh Gia Phát
 								</a>
 							</h1>
 						</div>
@@ -295,12 +295,8 @@
 											@endphp
 											@foreach ($cart as $item)
 												@php
-												if ($item['discount'] > 0) {
-													$pricePro = $item['discount'];
-												} else {
-													$pricePro = $item['price'];
-												}
-												$totalPrice += $pricePro * $item['quantity'];
+												$discountPrice = $item['price'] - ($item['price'] * ($item['discount'] / 100));
+												$totalPrice += $discountPrice * $item['quantity'];
 												@endphp
 												<tr class="product">
 												<td class="product__image">
@@ -319,7 +315,7 @@
 												</th>
 												<td class="product__quantity visually-hidden"><em>Số lượng:</em>{{$item['quantity']}}</td>
 												<td class="product__price">
-													{{number_format($pricePro* $item['quantity'])}}₫
+													{{number_format($discountPrice * $item['quantity'])}}₫
 												</td>
 												</tr>
 											@endforeach
@@ -350,7 +346,7 @@
 													Phí vận chuyển
 												</th>
 												<td class="total-line__price" >
-													30,000₫
+													
 												</td>
 											</tr>
 										</tbody>
@@ -362,7 +358,7 @@
 													</span>
 												</th>
 												<td class="total-line__price">
-													<span class="payment-due__price">{{number_format($totalPrice + 30000)}}₫</span>
+													<span class="payment-due__price">{{number_format($totalPrice)}}₫</span>
 												</td>
 											</tr>
 										</tfoot>
