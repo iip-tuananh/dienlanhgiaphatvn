@@ -220,7 +220,7 @@
       .zalo-btn{
          position: fixed;
          width: 110px;
-         z-index: 200000 !important;
+         z-index: 998 !important;
          cursor: pointer;
          height: 120px;
       }
