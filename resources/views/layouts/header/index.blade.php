@@ -46,7 +46,7 @@
                      </form>
                </div>
             </div>
-            <div class="col-lg-4 col-md-5 hidden-sm hidden-xs">
+            <div class="col-lg-4 col-md-5 hidden-sm hidden-xs" style="display: flex;justify-content: space-evenly;">
                <div class="hotline">
                      <div class="hotline-icon">
                      <i class="fa fa-phone"></i>
