@@ -182,7 +182,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="border-bg clearfix">
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="background-color: #1b3786;">
                         <div class="blogs-content">
                            <div class="heading">
                               <h2 class="title-head">					
