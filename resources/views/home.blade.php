@@ -140,7 +140,7 @@
                   <div class="border-bg clearfix">
                         <div class="col-md-12">
                         <div class="pblock-head">
-                           <h3 class="color5" style="border-top-color:#c9151c"><a href="{{route('allListProCate', ['cate'=>$cate->slug])}}">{{languageName($cate->name)}}</a></h3>
+                           <h3 class="color5" style="border-top-color:#f68a1d"><a href="{{route('allListProCate', ['cate'=>$cate->slug])}}">{{languageName($cate->name)}}</a></h3>
                            <div class="menu-button-edit">
                               <i class="fa fa-navicon" aria-hidden="true"></i>
                            </div>
