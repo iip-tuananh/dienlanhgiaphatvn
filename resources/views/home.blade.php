@@ -138,7 +138,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="border-bg clearfix">
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="background-color: #1b3786;">
                         <div class="pblock-head">
                            <h3 class="color5" style="border-top-color:#f68a1d"><a href="{{route('allListProCate', ['cate'=>$cate->slug])}}">{{languageName($cate->name)}}</a></h3>
                            <div class="menu-button-edit">
@@ -182,7 +182,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="border-bg clearfix">
-                        <div class="col-md-12" style="background-color: #1b3786;">
+                        <div class="col-md-12" >
                         <div class="blogs-content">
                            <div class="heading">
                               <h2 class="title-head">					
