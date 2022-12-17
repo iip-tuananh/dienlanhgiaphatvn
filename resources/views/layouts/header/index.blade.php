@@ -46,7 +46,7 @@
                      </form>
                </div>
             </div>
-            <div class="col-lg-4 col-md-5 hidden-sm hidden-xs" style="display: flex;justify-content: space-evenly;">
+            <div class="col-lg-4 col-md-5 hidden-sm hidden-xs" style="display:flex; align-items:center;justify-content: space-between;">
                <div class="hotline">
                      <div class="hotline-icon">
                      <i class="fa fa-phone"></i>
@@ -56,6 +56,9 @@
                      <span>Tổng đài miễn phí</span>
                      </div>
                </div>
+               <a href="tel:{{$setting->phone2}}" class="baogia-lapdat">
+                  <i>Báo giá lắp đặt</i>
+               </a>
                <div class="index-cart">
                      <a href="javascript:void(0)"><i class="fa fa-shopping-bag"></i></a>
                      @if (isset($cartcontent))

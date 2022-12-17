@@ -90,11 +90,29 @@
       border-radius: 100%;
       height: 50px;
       left: 25px;
-      opacity: 0.7;
       position: absolute;
       top: 25px;
       transform-origin: 50% 50% 0;
       width: 50px;
+      }
+      #suntory-alo-phoneIcon .hotline-number {
+         left: 66px;
+         position: absolute;
+         top: 33px;
+         background-color: #00aff2;
+         font-size: 16px;
+         color: #fff;
+         padding: 4px 20px;
+         border-top-right-radius: 20px;
+         border-bottom-right-radius: 20px;
+      }
+      #suntory-alo-phoneIcon:hover .hotline-number {
+         background-color: #c9151c;
+      }
+      @media only screen and (max-width: 768px) {
+         #suntory-alo-phoneIcon .hotline-number {
+         display: none;
+      }
       }
       .suntory-alo-phone.suntory-alo-hover, .suntory-alo-phone:hover {
       opacity: 1;
@@ -110,7 +128,7 @@
       opacity: 0.5;
       }
       .suntory-alo-phone.suntory-alo-green.suntory-alo-hover .suntory-alo-ph-circle, .suntory-alo-phone.suntory-alo-green:hover .suntory-alo-ph-circle {
-      border-color: #EB278D;
+      border-color: #c9151c;
       opacity: 1;
       }
       .suntory-alo-phone.suntory-alo-green .suntory-alo-ph-circle {
@@ -121,7 +139,7 @@
       background-color: rgba(0, 175, 242, 0.9);
       }
       .suntory-alo-phone.suntory-alo-green.suntory-alo-hover .suntory-alo-ph-circle-fill, .suntory-alo-phone.suntory-alo-green:hover .suntory-alo-ph-circle-fill {
-      background-color: #EB278D;
+      background-color: #c9151c;
       }
       .suntory-alo-phone.suntory-alo-green .suntory-alo-ph-circle-fill {
       background-color: rgba(0, 175, 242, 0.9);
@@ -130,7 +148,7 @@
       background-color: #00aff2;
       }
       .suntory-alo-phone.suntory-alo-green.suntory-alo-hover .suntory-alo-ph-img-circle, .suntory-alo-phone.suntory-alo-green:hover .suntory-alo-ph-img-circle {
-      background-color: #EB278D;
+      background-color: #c9151c;
       }
       .suntory-alo-phone.suntory-alo-green .suntory-alo-ph-img-circle {
       background-color: #00aff2;
@@ -229,6 +247,7 @@
       <div class="suntory-alo-ph-circle"></div>
       <div class="suntory-alo-ph-circle-fill"></div>
       <div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
+      <div class="hotline-number"><span>{{$setting->phone1}}</span></div>
    </a>
    <a href="https://zalo.me/{{$setting->phone1}}" target="_blank" class="zalo-btn" style="right: 0px; bottom: 0px;">
       <img src="{{url('frontend/images/zalo.png')}}" alt="chat zalo">
