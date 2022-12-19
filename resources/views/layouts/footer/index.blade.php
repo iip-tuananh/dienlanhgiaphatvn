@@ -52,6 +52,9 @@
                         @if ($setting->address2)
                         <li>Địa chỉ 2: {{$setting->address2}}</li>
                         @endif
+                        <li>Kho hàng 1: Kho Cảng - Bạch Đằng - Hà Nội</li>
+                        <li>Kho hàng 2: Số 622 - Minh Khai - Hà Nội</li>
+                        <li>Kho hàng 3: Số 4 - Hoàng Diệu - Ba Đình - Hà Nội</li>
                         <li>Hotline: <a href="tel:{{$setting->phone1}}"> {{$setting->phone1}}</a></li>
                         @if ($setting->phone2)
                         <li>Số điện thoại: <a href="tel:{{$setting->phone2}}"> {{$setting->phone2}}</a></li>

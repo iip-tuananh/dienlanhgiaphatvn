@@ -1,5 +1,18 @@
 <header class="header">
    <div class="topbar">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <ul class="list-inline pull-right">
+                  <li>
+                     <a href="tel:{{$setting->phone2}}">
+                     Chăm sóc khách hàng: <span>{{$setting->phone2}}</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
    </div>
    <div class="top-header">
          <div class="container">

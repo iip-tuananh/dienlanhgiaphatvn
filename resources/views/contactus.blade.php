@@ -44,11 +44,15 @@ Liên hệ với chúng tôi
 				<!-- End .widget-title -->
 				<ul class="widget-menu contact-info-page">
 					<li><i class="fa fa-map-marker color-x" aria-hidden="true"></i>{{$setting->address1}}</li>
+					<li><i class="fa fa-map-marker color-x" aria-hidden="true"></i>{{$setting->address2}}</li>
 					<li><i class="fa fa-phone color-x" aria-hidden="true"></i> <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></li>
 					@if ($setting->phone2)
 					<li><i class="fa fa-phone color-x" aria-hidden="true"></i> <a href="tel:{{$setting->phone2}}">{{$setting->phone2}}</a></li>
 					@endif
 					<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:{{$setting->email}}">{{$setting->email}}</a></li>
+					<li>Kho hàng 1: Kho Cảng - Bạch Đằng - Hà Nội</li>
+					<li>Kho hàng 2: Số 622 - Minh Khai - Hà Nội</li>
+					<li>Kho hàng 3: Số 4 - Hoàng Diệu - Ba Đình - Hà Nội</li>
 				</ul>
 				<!-- End .widget-menu -->
 			</div>
