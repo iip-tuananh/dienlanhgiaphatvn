@@ -59,41 +59,41 @@
       z-index: 200000 !important;
       }
       .suntory-alo-ph-circle {
-      animation: 1.2s ease-in-out 0s normal none infinite running suntory-alo-circle-anim;
-      background-color: transparent;
-      border: 2px solid rgba(30, 30, 30, 0.4);
-      border-radius: 100%;
-      height: 100px;
-      left: 0px;
-      opacity: 0.1;
-      position: absolute;
-      top: 0px;
-      transform-origin: 50% 50% 0;
-      transition: all 0.5s ease 0s;
-      width: 100px;
+         animation: 1.2s ease-in-out 0s normal none infinite running suntory-alo-circle-anim;
+         background-color: transparent;
+         border: 2px solid rgba(30, 30, 30, 0.4);
+         border-radius: 100%;
+         height: 120px;
+         left: 0px;
+         opacity: 0.1;
+         position: absolute;
+         top: 0px;
+         transform-origin: 50% 50% 0;
+         transition: all 0.5s ease 0s;
+         width: 120px;
       }
       .suntory-alo-ph-circle-fill {
-      animation: 2.3s ease-in-out 0s normal none infinite running suntory-alo-circle-fill-anim;
-      border: 2px solid transparent;
-      border-radius: 100%;
-      height: 70px;
-      left: 15px;
-      position: absolute;
-      top: 15px;
-      transform-origin: 50% 50% 0;
-      transition: all 0.5s ease 0s;
-      width: 70px;
+         animation: 2.3s ease-in-out 0s normal none infinite running suntory-alo-circle-fill-anim;
+         border: 2px solid transparent;
+         border-radius: 100%;
+         height: 90px;
+         left: 14px;
+         position: absolute;
+         top: 15px;
+         transform-origin: 50% 50% 0;
+         transition: all 0.5s ease 0s;
+         width: 90px;
       }
       .suntory-alo-ph-img-circle {
       /* animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim; */
-      border: 2px solid transparent;
-      border-radius: 100%;
-      height: 50px;
-      left: 25px;
-      position: absolute;
-      top: 25px;
-      transform-origin: 50% 50% 0;
-      width: 50px;
+         border: 2px solid transparent;
+         border-radius: 100%;
+         height: 70px;
+         left: 25px;
+         position: absolute;
+         top: 25px;
+         transform-origin: 50% 50% 0;
+         width: 70px;
       }
       #suntory-alo-phoneIcon .hotline-number {
          left: 66px;
@@ -205,11 +205,12 @@
       }
       }
       .suntory-alo-ph-img-circle i {
-      animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim;
-      font-size: 30px;
-      line-height: 50px;
-      padding-left: 10px;
-      color: #fff;
+         animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim;
+         font-size: 30px;
+         line-height: 50px;
+         padding-left: 20px;
+         color: #fff;
+         padding-top: 10px;
       }
       /*=================== End phone ring ===============*/
       @keyframes suntory-alo-ring-ring {
