@@ -247,7 +247,10 @@
       <div class="suntory-alo-ph-circle"></div>
       <div class="suntory-alo-ph-circle-fill"></div>
       <div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
-      <div class="hotline-number"><span>{{$setting->phone1}}</span></div>
+      <div class="hotline-number">
+      <span>{{$setting->phone1}}</span><br>
+      <span>{{$setting->phone2}}</span>
+      </div>
    </a>
    <a href="https://zalo.me/{{$setting->phone1}}" target="_blank" class="zalo-btn" style="right: 0px; bottom: 0px;">
       <img src="{{url('frontend/images/zalo.png')}}" alt="chat zalo">
