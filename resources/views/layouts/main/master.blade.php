@@ -96,9 +96,9 @@
          width: 70px;
       }
       #suntory-alo-phoneIcon .hotline-number {
-         left: 66px;
+         left: 77px;
          position: absolute;
-         top: 33px;
+         top: 29px;
          background-color: #00aff2;
          font-size: 16px;
          color: #fff;
